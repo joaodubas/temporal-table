@@ -2,13 +2,18 @@
 version: '2'
 
 services:
-    db:
-        image: 'joaodubas/postgis:9.6'
-        environment:
-            POSTGRES_PASSWORD: 1234
-            POSTGRES_USER: dev
-        volumes:
-            - 'db_data:/var/lib/postgresql/data'
+  db:
+    image: 'joaodubas/postgres:10'
+    build:
+      context: .
+      args:
+        CREATED: today
+        REVISION: docker-compose
+    environment:
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_USER: dev
+    volumes:
+      - 'db_data:/var/lib/postgresql/data'
 
 volumes:
-    db_data:
+  db_data: {}
