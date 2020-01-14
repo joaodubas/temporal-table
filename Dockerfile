@@ -1,4 +1,4 @@
-FROM mdillon/postgis:10
+FROM mdillon/postgis:11
 
 LABEL maintainer="Joao Paulo Dubas <joao.dubas@gmail.com>" \
       org.opencontainers.image.authors="Joao Paulo Dubas <joao.dubas@gmail.com>" \
